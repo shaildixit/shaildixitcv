@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shail Singh Dixit – Sports & Counselling Psychologist</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0d0d0d;
+    --paper: #f5f0e8;
+    --gold: #b8973a;
+    --gold-light: #d4af5a;
+    --teal: #1a5c5c;
+    --teal-light: #2a7a7a;
+    --muted: #5a5a5a;
+    --rule: #d4c9b0;
+    --accent-bg: #1a1a1a;
+    --gutter: 52px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--accent-bg);
+    color: #fff;
+    padding: 30px var(--gutter) 44px var(--gutter);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    border: 2px solid rgba(184,151,58,0.18);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 40%;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    border: 1px solid rgba(184,151,58,0.12);
+  }
+
+  .header-inner { position: relative; z-index: 1; }
+
+  .name-block { margin-bottom: 0; }
+
+  .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1;
+    color: #fff;
+  }
+
+  .name span { color: var(--gold); }
+
+  .title-line {
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-top: 5px;
+    font-weight: 400;
+  }
+
+  .header-cols {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: end;
+    margin-top: 8px;
+  }
+
+  .tagline {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.72);
+    max-width: 65%;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .contact-list {
+    list-style: none;
+    text-align: right;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.65);
+    line-height: 2;
+  }
+  .contact-list a { color: var(--gold-light); text-decoration: none; }
+
+  /* ── BODY LAYOUT ── */
+  .body {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    gap: 0;
+  }
+
+  .main { padding: 44px 44px 44px var(--gutter); }
+  .sidebar { padding: 44px 40px 44px 36px; background: #ede8de; }
+
+  /* ── SECTION TITLES ── */
+  .section { margin-bottom: 52px; }
+
+  .section-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 500;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ── PROFILE ── */
+  .profile-text {
+    font-size: 13.5px;
+    color: #2a2a2a;
+    line-height: 1.8;
+    font-weight: 300;
+    text-align: justify;
+  }
+
+  /* ── EXPERIENCE ENTRIES ── */
+  .exp-entry { margin-bottom: 30px; }
+  .exp-entry:last-child { margin-bottom: 0; }
+
+  .exp-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+
+  .exp-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 15.5px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .exp-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+
+  .exp-org {
+    font-size: 12px;
+    color: var(--teal);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    font-size: 13px;
+    color: #333;
+    font-weight: 300;
+  }
+  .exp-bullets li {
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 4px;
+  }
+  .exp-bullets li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+
+  /* ── DARTS ACHIEVEMENTS ── */
+  .darts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .dart-card {
+    background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+    border: 1px solid rgba(184,151,58,0.25);
+    border-radius: 6px;
+    padding: 11px 13px;
+    position: relative;
+    overflow: hidden;
+  }
+  .dart-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--gold);
+  }
+
+  .dart-card.highlight::before { background: var(--teal-light); }
+
+  .dart-card-text {
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+    font-weight: 400;
+    padding-left: 6px;
+  }
+
+  .dart-card-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    color: var(--gold-light);
+    margin-bottom: 2px;
+    padding-left: 6px;
+  }
+
+  /* ── SIDEBAR ITEMS ── */
+  .skill-group { margin-bottom: 28px; }
+
+  .skill-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    background: #fff;
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    font-size: 11.5px;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-weight: 400;
+  }
+
+  .tag.gold {
+    background: rgba(184,151,58,0.1);
+    border-color: rgba(184,151,58,0.4);
+    color: #7a6020;
+  }
+
+  .tag.teal {
+    background: rgba(26,92,92,0.08);
+    border-color: rgba(26,92,92,0.3);
+    color: var(--teal);
+  }
+
+  /* ── EDUCATION SIDEBAR ── */
+  .edu-entry { margin-bottom: 16px; }
+  .edu-degree {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .edu-inst {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .edu-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--gold);
+  }
+
+  /* ── GOAL BANNER ── */
+  .goal-banner {
+    background: var(--teal);
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 6px;
+    margin-bottom: 28px;
+    font-size: 12.5px;
+    line-height: 1.6;
+    font-weight: 300;
+    text-align: justify;
+  }
+  .goal-banner strong {
+    font-weight: 600;
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 4px;
+  }
+
+  /* ── LANG ── */
+  .lang-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .lang-pill {
+    font-size: 11.5px;
+    padding: 3px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--rule);
+    color: var(--muted);
+  }
+
+  /* ── AVAILABILITY ── */
+  .avail-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #e8f5f0;
+    border: 1px solid #9ecfbe;
+    color: #1a6040;
+    font-size: 11.5px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+    margin-top: 10px;
+  }
+  .avail-dot { width: 7px; height: 7px; background: #2ca070; border-radius: 50%; }
+
+  hr.rule { border: none; border-top: 1px solid var(--rule); margin: 22px 0; }
+
+  @media print {
+    body { font-size: 12px; }
+    .header { padding: 40px 50px 36px; }
+    .main { padding: 36px 40px 36px 50px; }
+    .sidebar { padding: 36px 40px 36px 30px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="name-block">
+        <div class="name">Shail Singh <span>Dixit</span></div>
+        <div class="title-line">Sports &amp; Counselling Psychology &nbsp;·&nbsp; Competitive Darts Athlete &nbsp;·&nbsp; Thane, India</div>
+      </div>
+      <div class="header-cols">
+        <p class="tagline">A counselling psychologist in final-year training who competes internationally in darts and now coaches India's national youth darts team — bringing lived, elite-level performance experience to athlete mental health.</p>
+        <ul class="contact-list">
+          <li><a href="mailto:shailender77@gmail.com">shailender77@gmail.com</a></li>
+          <li>+91 9121713107</li>
+          <li>Thane, Maharashtra, India</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- MAIN COLUMN -->
+    <main class="main">
+
+      <!-- PROFILE -->
+      <section class="section">
+        <div class="section-title">Profile</div>
+        <p class="profile-text">
+          A counselling psychologist in final-year training (IGNOU MAPC, result awaited September 2026) with a rare dual identity: an internationally competitive darts athlete selected by the Indian Darts Council's president to coach India's national youth darts team, and a former people-leader who spent over a decade managing high-performance teams under pressure. A 285.5-hour clinical internship at the Institute for Psychological Health, Thane, added structured exposure to case documentation and developmental assessment. Currently seeking a placement with an experienced sports psychologist — in person, remote, or hybrid — to translate this combination of academic training, live coaching work, and athlete experience into applied psychological support for competitive performers.
+        </p>
+      </section>
+
+      <!-- PSYCHOLOGY TRAINING -->
+      <section class="section">
+        <div class="section-title">Psychology Training &amp; Applied Experience</div>
+
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-title">Youth Team Coach — India Darts (JDC)</div>
+            <div class="exp-date">2026 – Present</div>
+          </div>
+          <div class="exp-org">Junior Darts Corporation &nbsp;|&nbsp; Selected by the Indian Darts Council President</div>
+          <ul class="exp-bullets">
+            <li>Selected to coach India's national youth darts team ahead of the international tournament in Gibraltar, November 2026</li>
+            <li>Applying performance psychology directly with competitive youth athletes — pre-match routine, focus, and pressure management — the applied counterpart to the training below</li>
+          </ul>
+        </div>
+
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-title">MA Psychology – Counselling (Final Year)</div>
+            <div class="exp-date">2024 – 2026</div>
+          </div>
+          <div class="exp-org">IGNOU – Indira Gandhi National Open University &nbsp;|&nbsp; Online Distance Learning</div>
+          <ul class="exp-bullets">
+            <li>Completed all theory coursework (Counselling Psychology, Assessment in Counselling &amp; Guidance, Interventions in Counselling) and appeared for final-year examinations, June 2026; result awaited (~September 2026)</li>
+            <li>Completed project (MPCE-026), <em>Flow State and Eudaimonic Well-Being Among Dart Players: A Correlational Study</em> (n=47), under Dr. Atish S. Taukari; found a significant positive correlation between flow state and eudaimonic well-being (r=0.33, p=0.023); viva voce completed</li>
+          </ul>
+        </div>
+
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-title">Internship – Counselling Psychology (MPCE-025)</div>
+            <div class="exp-date">Feb – Apr 2026</div>
+          </div>
+          <div class="exp-org">IPH – Institute for Psychological Health, Thane &nbsp;|&nbsp; Supervised by Dr. Geeta Joshi, Clinical Psychologist</div>
+          <ul class="exp-bullets">
+            <li>285.5 hours of structured clinical exposure: observed psychiatric consultations, intake interviews, and counselling sessions across 10 documented case studies spanning child, adolescent, and adult presentations</li>
+            <li>Independently researched and prepared a comparative developmental-theory chart (Piaget, Freud, Erikson), selected by the supervising psychologist for use in future intern training</li>
+            <li>Observed psychological assessment procedures (including IQ/WISC) and multidisciplinary case-formulation discussions</li>
+          </ul>
+        </div>
+
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-title">Crash Course in Counselling Psychology</div>
+            <div class="exp-date">2019 · 6 mo</div>
+          </div>
+          <div class="exp-org">HAP – Hyderabad Academy of Psychology</div>
+          <ul class="exp-bullets">
+            <li>Theory – Grade B &nbsp;|&nbsp; Practical Sessions – Grade A</li>
+            <li>Practical sessions conducted as peer role-play exercises; foundational grounding in counselling theory, case management, and therapeutic relationships</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- DARTS ACHIEVEMENTS -->
+      <section class="section">
+        <div class="section-title">Competitive Darts – International Athlete Profile</div>
+        <p style="font-size:12.5px; color:var(--muted); margin-bottom:10px; font-weight:300;">
+          Since returning from Dubai in 2017, I have pursued professional darts — an experience that provides direct, experiential insight into the demands of elite competition, performance psychology, pre-match routine, mental resilience, and flow states under pressure.
+        </p>
+        <div style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#1a1a1a,#252525); border:1px solid rgba(184,151,58,0.4); border-radius:6px; padding:9px 18px; margin-bottom:14px;">
+          <span style="font-family:'Playfair Display',serif; font-size:26px; font-weight:900; color:var(--gold); line-height:1;">#4</span>
+          <div>
+            <div style="font-family:'DM Mono',monospace; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:1px;">Current National Ranking</div>
+            <div style="font-size:12px; color:rgba(255,255,255,0.8);">Indian Darts Council (IDC) — India</div>
+          </div>
+        </div>
+        <div class="darts-grid">
+          <div class="dart-card highlight">
+            <div class="dart-card-year">2023 · PDC</div>
+            <div class="dart-card-text">Winner — PDC Asian Championship India Qualifiers. Represented India at PDC Asian Championship, Japan</div>
+          </div>
+          <div class="dart-card highlight">
+            <div class="dart-card-year">2023 · PDD</div>
+            <div class="dart-card-text">Won Indian Qualifiers (Chennai). Represented India at PDD Malaysia Cup</div>
+          </div>
+          <div class="dart-card">
+            <div class="dart-card-year">2023 · PDC Asia Tour 19</div>
+            <div class="dart-card-text">Reached Top 16 — PDC Asia Darts Tour, Bangsaen, Thailand</div>
+          </div>
+          <div class="dart-card">
+            <div class="dart-card-year">2023</div>
+            <div class="dart-card-text">Semi-Finalist — Hornbill Darts Masters Open Singles &amp; Bengal Darts States Championship</div>
+          </div>
+          <div class="dart-card highlight">
+            <div class="dart-card-year">2019 · Historic</div>
+            <div class="dart-card-text">First player in India to hit the 170 "Big Fish" checkout at India Open Nationals (BRC). Award presented by Mr. Russ Bray</div>
+          </div>
+          <div class="dart-card">
+            <div class="dart-card-year">2023 · IDF</div>
+            <div class="dart-card-text">Quarter-Finalist — Hornbill Darts Masters &amp; IDF Nationals 2023</div>
+          </div>
+          <div class="dart-card">
+            <div class="dart-card-year">2024 · PDC Asia</div>
+            <div class="dart-card-text">PDC Asian Tour (Penang, Malaysia) — Top 64, Events 11 &amp; 12</div>
+          </div>
+          <div class="dart-card">
+            <div class="dart-card-year">2021</div>
+            <div class="dart-card-text">Finalist — Indian Virtual Cup (Online). Quarter-Finalist — PDC India Qualifiers Championship</div>
+          </div>
+          <div class="dart-card">
+            <div class="dart-card-year">2019</div>
+            <div class="dart-card-text">PDC India Qualifiers QF &nbsp;·&nbsp; IDC Doubles Finalist &nbsp;·&nbsp; IDC Singles QF</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROFESSIONAL BACKGROUND -->
+      <section class="section">
+        <div class="section-title">Prior Professional Background (Selected)</div>
+
+        <!-- PROMOSEVEN -->
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-title">Project Manager – Web Development</div>
+            <div class="exp-date">Oct 2016 – Mar 2017</div>
+          </div>
+          <div class="exp-org">Promoseven360 &nbsp;|&nbsp; Dubai, UAE</div>
+          <ul class="exp-bullets">
+            <li>Managed corporate website development for Al-Ghurair — one of the Middle East's leading conglomerates with global operations across multiple sectors</li>
+            <li>Established project scope by studying strategic business drivers and validating business and technical requirements with subject-matter experts</li>
+            <li>Monitored project progress, tracked action items, conducted design and implementation reviews, and coordinated requirements with stakeholders</li>
+            <li>Documented Business Requirements, Technical Requirement Documents, Project Timeline, Statement of Work, Status Reports and SiteMaps</li>
+          </ul>
+        </div>
+
+        <!-- LIONBRIDGE -->
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-title">Project Manager – Localization</div>
+            <div class="exp-date">2010 – 2014</div>
+          </div>
+          <div class="exp-org">Lionbridge Technologies</div>
+          <ul class="exp-bullets">
+            <li>Spearheaded Microsoft Bing account across 109+ languages; achieved $2M USD revenue — won RFP three consecutive years (2011–13)</li>
+            <li>Led teams of 100+ co-located and virtual staff; cultivated high-performance culture under tight deadlines</li>
+            <li>Accountable for projects valued between $2.5M and $1B USD</li>
+          </ul>
+        </div>
+
+        <!-- HSBC -->
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-title">Asst. Operations Manager – Banking &amp; Application Support</div>
+            <div class="exp-date">2001 – 2010</div>
+          </div>
+          <div class="exp-org">HSBC Global Resourcing</div>
+          <ul class="exp-bullets">
+            <li>Led HSBC Middle-East process re-migration, ITSCM team for 800+ staff in Kolkata GSC, and international funds transfer set-up (USA visit)</li>
+            <li>As a Project Lead, visited the UK to migrate and set up end-to-end first line technical support for the entire Europe region, supporting 38,000+ users across Clarity (NIKU), Global Service Desk and AlarmPoint applications</li>
+            <li>Implemented Business Continuity Plans; successfully handled 3 public disruptive situations</li>
+            <li>Six Sigma Yellow Belt certified: delivered $14,400/annum savings through a process automation initiative</li>
+          </ul>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="goal-banner">
+        <strong>Career Goal</strong>
+        Seeking placement with an experienced sports psychologist — in person, remote, or hybrid — to complement live coaching work with India's youth darts team.
+      </div>
+
+      <!-- CORE COMPETENCIES -->
+      <div class="skill-group">
+        <div class="skill-label">Psychology Competencies</div>
+        <div class="skill-tags">
+          <span class="tag teal">Sports Psychology</span>
+          <span class="tag teal">Flow State Research</span>
+          <span class="tag teal">Counselling Psychology</span>
+          <span class="tag teal">Performance Psychology</span>
+          <span class="tag teal">Biopsychosocial Assessment</span>
+          <span class="tag teal">Case Formulation</span>
+          <span class="tag teal">Flow State Scale (FSS)</span>
+          <span class="tag teal">Mental Resilience Coaching</span>
+        </div>
+      </div>
+
+      <!-- ATHLETE ADVANTAGE -->
+      <div class="skill-group">
+        <div class="skill-label">Athlete Insight (Unique Edge)</div>
+        <div class="skill-tags">
+          <span class="tag gold">PDC International Competitor</span>
+          <span class="tag gold">Youth Athlete Coaching</span>
+          <span class="tag gold">Pre-match Routine Design</span>
+          <span class="tag gold">Pressure Performance</span>
+          <span class="tag gold">Focus &amp; Concentration</span>
+          <span class="tag gold">Competition Anxiety</span>
+          <span class="tag gold">Flow States in Sport</span>
+        </div>
+      </div>
+
+      <!-- PROFESSIONAL SKILLS -->
+      <div class="skill-group">
+        <div class="skill-label">Professional Skills</div>
+        <div class="skill-tags">
+          <span class="tag">People Leadership</span>
+          <span class="tag">Team Development</span>
+          <span class="tag">Data Analysis &amp; MIS</span>
+          <span class="tag">Lean Six Sigma YB</span>
+          <span class="tag">Stakeholder Management</span>
+          <span class="tag">Project Management</span>
+        </div>
+      </div>
+
+      <hr class="rule">
+
+      <!-- EDUCATION -->
+      <div class="skill-group">
+        <div class="skill-label">Education</div>
+        <div style="margin-bottom: 12px; font-weight: 600; font-size: 13px; color: var(--ink);">Shailender Singh Dixit Thakur</div>
+
+        <div class="edu-entry">
+          <div class="edu-year">2024 – 2026</div>
+          <div class="edu-degree">MA Psychology<br><em style="font-style:italic; font-size:12px; color:var(--muted)">Counselling Specialisation</em></div>
+          <div class="edu-inst">IGNOU (Final year; result awaited Sept 2026)</div>
+        </div>
+
+        <div class="edu-entry">
+          <div class="edu-year">2019</div>
+          <div class="edu-degree">Counselling Psychology<br><em style="font-style:italic; font-size:12px; color:var(--muted)">Crash Course</em></div>
+          <div class="edu-inst">HAP – Hyderabad Academy of Psychology<br>Practical: A &nbsp;·&nbsp; Theory: B</div>
+        </div>
+
+        <div class="edu-entry">
+          <div class="edu-year">2008 – 2010</div>
+          <div class="edu-degree">MBA – Finance</div>
+          <div class="edu-inst">Periyar University, Salem (Online/Distance)</div>
+        </div>
+
+        <div class="edu-entry">
+          <div class="edu-year">1995 – 1998</div>
+          <div class="edu-degree">B.Com – Accountancy</div>
+          <div class="edu-inst">Sardar Patel College, Osmania University, Hyderabad</div>
+        </div>
+      </div>
+
+      <hr class="rule">
+
+      <!-- CERTIFICATIONS -->
+      <div class="skill-group">
+        <div class="skill-label">Certifications &amp; Training</div>
+        <div class="skill-tags" style="flex-direction:column; gap:5px;">
+          <span class="tag gold" style="display:block; width:100%">Lean Six Sigma Yellow Belt</span>
+          <span class="tag" style="display:block; width:100%">PMP Trained</span>
+          <span class="tag" style="display:block; width:100%">Train the Trainer</span>
+          <span class="tag" style="display:block; width:100%">Situational Leadership</span>
+          <span class="tag" style="display:block; width:100%">Coaching for Managers</span>
+        </div>
+      </div>
+
+      <hr class="rule">
+
+      <!-- LANGUAGES -->
+      <div class="skill-group">
+        <div class="skill-label">Languages</div>
+        <div class="lang-row">
+          <span class="lang-pill">English</span>
+          <span class="lang-pill">Hindi</span>
+          <span class="lang-pill">Telugu</span>
+          <span class="lang-pill">Marathi</span>
+        </div>
+      </div>
+
+      <div class="avail-badge">
+        <div class="avail-dot"></div>
+        Available now · Open to remote/hybrid
+      </div>
+
+    </aside>
+  </div>
+</div>
+</body>
+</html>
